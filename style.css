@@ -40,7 +40,7 @@ a:hover {
     margin-right: 50px;
 }
 
-.about{
+.about_link{
     margin-right: 75px;
 }
 
@@ -68,10 +68,43 @@ a:hover {
 
 .desktop_image{
     filter: brightness(30%);
-    margin-bottom: -230px;
+    margin-bottom: -215px;
 }
 
 .inst_logo_main, .vk_logo_main{
     margin-right: 20px;
 }
 
+
+.about_container{
+    width: 100%;
+    padding-top: 56.25%;
+    color: white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.about, .my_projects{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.about_me_h{
+    font-size: 69px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.my_projects_h{
+    font-size: 69px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.about_me_p{
+    font-size: 25px;
+}
