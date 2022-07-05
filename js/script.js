@@ -1,1 +1,0 @@
-let selector = document.querySelectorAll('input[type="file"]')

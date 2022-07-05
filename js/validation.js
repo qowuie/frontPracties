@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('form');
     form.addEventListener('submit', formSend);
+    
 
     async function formSend(e) {
         e.preventDefault();
@@ -11,21 +12,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let formData = new FormData(form);
 
+        const name = form.elements["name"].value;
+        console.log(name);
+        const from = form.elements["email"].value;
+        const message = form.elements["message"].value;
+        const emailBody = `
+        <span><strong>Name:</strong> ${name}</span><br />
+        <span><strong>Email Address:</strong>  ${from}</span><br />
+        <span><strong>Message:</strong>  ${message}</span>`;
+
         if (error===0) {
-            let responce = await fetch('sendmail.php', {
-                method: 'POST',
-                body: formData
-            });
-            if (responce.ok){
-                let result = await responce.json();
-                alert(result.message);
-                formPreview.innerHTML = '';
-                form.reset();
-            } else {
-                alert("Error");
-            }
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "qowuie0@gmail.com",
+                Password : "9B7CCDFCA57972617DD50774025EF8FBB151",
+                To : 'qowuie0@gmail.com',
+                From : "qowuie0@gmail.com",
+                Subject : "Test email",
+                Body : emailBody}).then(message => alert(message));
+            form.reset();
         } else {
-            alert('Enter requiered fields')
+            alert('Enter requiered fields of fix them')
         }
 
     }
@@ -43,11 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     formAddError(input);
                     error++;
                 }
-            } else if(input.getAttribute("type") == "checkbox" && input.checked === false){
-                formAddError(input);
-                error++;
             } else {
-                if (input.vaalue === '') {
+                if (input.value === '') {
                     formAddError(input);
                     error++;
                 }

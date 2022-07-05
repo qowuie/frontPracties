@@ -52,10 +52,10 @@
                 <div class="wrapper">
                     <form action="#" id="form" class="form">
                         <div class="pageTitle title">Contact me</div>
-                        <input type="text" class="name_input _req" placeholder="Name"/>
-                        <input type="text" class="email_input _req _email" placeholder="Email"/>
-                        <textarea class="message_input _req" placeholder="Message"></textarea>
-                        <button type="submit" class="submit_input _req">Send</button>
+                        <input type="text" class="name_input _req" name="name" id="name" placeholder="Name"/>
+                        <input type="text" class="email_input _req _email" name="email" id="email" placeholder="Email"/>
+                        <textarea class="message_input" name="message" id="message" placeholder="Message"></textarea>
+                        <button type="submit" class="submit_input">Send</button>
                     </form>
                 </div>
             </section>
@@ -71,6 +71,7 @@
         </div>
         
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/smooth.js"></script>
     <script src="js/validation.js"></script>
